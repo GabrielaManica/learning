@@ -1,0 +1,57 @@
+﻿@page "/"
+@model Cadastro.APP.Pages.Pessoas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de Pessoas:</h2>
+
+<form>
+    <p>
+        Nome: <input type="text" asp-for="filtroNome" />
+
+        Email: <input type="text" asp-for="filtroEmail" />
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+
+<p>
+    <a asp-page="Create">Adicionar pessoa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoas[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoas[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoas[0].DataNascimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pessoas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@page
+@model Cadastro.APP.Pages.Pessoas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pessoa.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pessoa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pessoa.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pessoa.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pessoa.DataNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pessoa.DataNascimento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.pessoa.Id">Edit</a> |
+    <a asp-page="./Index">Voltar a lista</a>
+</div>

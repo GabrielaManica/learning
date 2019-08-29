@@ -1,0 +1,18 @@
+Ambiente:
+	Windows 10
+	Visual Studio 2019
+	Banco de dados SQLite
+
+Passos:
+	- Criação de um projeto do tipo aspnet core 2.2 para desenvolver a API
+	- Criação de um projeto do tipo classlib para definir o modelo de dados - Classe Pessoa
+	- Adição do pacote nuget Microsoft.EntityFrameworkCore.Sqlite
+	- Importação do projeto de classlib para utilização da classe pessoa
+	- Criação da classe de contexto para acesso ao banco de dados
+	- Criação do controller para expor API PESSOAS	
+		- Verbos: GET, POST, PUT
+	- Criação de um projeto do tipo web aspnet core (Razor Page) para criação da interface de usuário
+	- Adição do pacote pessoas
+	- Adição das páginas para listagem e busca, adição e edição de pessoas, consumindo a API REST
+	
+	
